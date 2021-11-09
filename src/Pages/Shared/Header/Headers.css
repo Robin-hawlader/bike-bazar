@@ -1,0 +1,9 @@
+.link-customize a{
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    font-size: 17px;
+}
+.link-customize a:hover{
+    color: rgb(109, 109, 238);
+}
