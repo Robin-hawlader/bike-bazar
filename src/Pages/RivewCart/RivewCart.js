@@ -1,25 +1,13 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import './ProductCart.css'
+import './ReviewCart.css'
 
-const ProductsCart = (props) => {
+const RivewCart = (props) => {
     const { image, name, description, _id } = props.product;
     const history = useHistory();
-    const handleDetails = (id, product) => {
-        console.log(product)
+    const handleDetails = (id) => {
         history.push(id)
-        fetch('http://localhost:5000/reviews', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-            .then(res => res.json)
-            .then(data => {
-                console.log(data)
-            })
     }
 
     return (
@@ -34,10 +22,10 @@ const ProductsCart = (props) => {
                         </Card.Text>
                     </Card.Body>
                 </Col>
-                <Button onClick={() => handleDetails(`/purchase/${_id}`, props.product)} variant='danger'>Review</Button>
+                <Button onClick={() => handleDetails(`/purchase/${_id}`, props.product)} variant='danger'>Details</Button>
             </Card>
         </div>
     );
 };
 
-export default ProductsCart;
+export default RivewCart;

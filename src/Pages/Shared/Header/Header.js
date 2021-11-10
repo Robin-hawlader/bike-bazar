@@ -1,9 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Contexts/useAuth';
 import './Headers.css';
 
 const Header = () => {
+    const { user, logout } = useAuth();
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -12,20 +14,30 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto link-customize">
-                            <Link to='/home'>Home</Link>
-                            <Link to='/home'>Home</Link>
-                            <Link to='/home'>Home</Link>
+                            <Nav>
+                                <Link to='/home'>Home</Link>
+                                <Link to='/explore'>Explore</Link>
+                            </Nav>
+
+                            <Nav>
+                                {
+                                    user.email ? <div>
+                                        <Link to='/dashboard'>Dash board</Link>
+                                        <Button variant='danger' onClick={logout} className='ms-2'>Logout</Button>
+                                    </div>
+                                        :
+                                        <Link to='/login'>Login</Link>
+                                }
+                            </Nav>
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </div >
     );
 };
 

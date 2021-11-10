@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import ProductsCart from '../../Shared/ProductsCart/ProductsCart';
 
 
@@ -12,13 +12,13 @@ const Products = () => {
     }, [])
     const products = bikes.slice(0, 6);
     return (
-        <div className='container'>
-            <Row xs={1} md={2} className="g-4">
+        <div className='container my-5'>
+            <h2 className='mb-5'><span className='border-bottom border-danger border-3'>Bike Bazar</span></h2>
+            <Row xs={1} md={3} className="g-4">
                 {
-                    products.map(product => <ProductsCart product={product}></ProductsCart>)
+                    products.map(product => <ProductsCart key={product._id} product={product}></ProductsCart>)
                 }
             </Row>
-
         </div>
     );
 };
