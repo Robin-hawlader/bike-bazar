@@ -9,7 +9,7 @@ const Reviews = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://murmuring-oasis-61179.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

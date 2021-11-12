@@ -16,7 +16,7 @@ const Purchase = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.product = product || newProduct;
-        fetch('http://localhost:5000/orders', {
+        fetch('https://murmuring-oasis-61179.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,12 +34,12 @@ const Purchase = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${id}`)
+        fetch(`https://murmuring-oasis-61179.herokuapp.com/bikes/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
     useEffect(() => {
-        fetch(`http://localhost:5000/upload/${id}`)
+        fetch(`https://murmuring-oasis-61179.herokuapp.com/upload/${id}`)
             .then(res => res.json())
             .then(data => setNewProduct(data))
     }, [])

@@ -5,14 +5,14 @@ import AllOrders from './AllOrders';
 const ManageAllorders = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/allorders')
+        fetch('https://murmuring-oasis-61179.herokuapp.com/allorders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
     const handleDelete = id => {
         const proced = window.confirm('You want to Cancel your Order')
         if (proced) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://murmuring-oasis-61179.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

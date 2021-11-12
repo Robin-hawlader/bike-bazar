@@ -6,7 +6,7 @@ import ProductsCart from '../../Shared/ProductsCart/ProductsCart';
 const Products = () => {
     const [bikes, setBikes] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://murmuring-oasis-61179.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => setBikes(data))
     }, [])

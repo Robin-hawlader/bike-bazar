@@ -5,7 +5,7 @@ import ProductsCart from '../../Shared/ProductsCart/ProductsCart';
 const Uploaded = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/upload')
+        fetch('https://murmuring-oasis-61179.herokuapp.com/upload')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

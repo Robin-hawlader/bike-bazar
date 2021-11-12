@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/upload', {
+        fetch('https://murmuring-oasis-61179.herokuapp.com/upload', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
