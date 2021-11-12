@@ -28,9 +28,7 @@ const Footer = () => {
                         <nav className='link-footer text-light'>
                             <h3>Main Links</h3>
                             <Link to="/home">{rightAngle} Home</Link> <br />
-                            <Link to="/mycart">{rightAngle} My Cart</Link> <br />
-                            <Link to="/booking">{rightAngle} Booking</Link><br />
-                            <Link to="/addServices">{rightAngle}  Add New</Link><br />
+                            <Link to="/explore">{rightAngle} Explore</Link> <br />
                             <Link to="/login">{rightAngle} Login</Link>
 
                         </nav>

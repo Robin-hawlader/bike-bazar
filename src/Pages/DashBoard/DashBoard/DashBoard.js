@@ -9,13 +9,14 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Contexts/useAuth';
-import Review from '../../Home/Review/Review';
 import AdminRoute from '../../PrivateRoute/AdminRoute/AdminRoute';
+import Footer from '../../Shared/Footer/Footer';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllorders from '../ManageAllOrders/ManageAllorders';
 import MyOrders from '../MyOrders/MyOrders';
 import Payments from '../Payments/Payments';
+import Reviews from '../Review/Reviews';
 import './DashBoard.css';
 
 const DashBoard = () => {
@@ -23,7 +24,6 @@ const DashBoard = () => {
     let { path, url } = useRouteMatch();
     return (
         <div>
-            <h2>This is dash board</h2>
             <div className='m-3'>
                 <Row>
                     <Col className='Link-properties' md={3}>
@@ -61,7 +61,7 @@ const DashBoard = () => {
                                 <MyOrders></MyOrders>
                             </Route>
                             <Route path={`${path}/review`}>
-                                <Review></Review>
+                                <Reviews></Reviews>
                             </Route>
                         </Switch>
                     </Col>

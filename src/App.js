@@ -9,6 +9,8 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './Contexts/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
+import Footer from './Pages/Shared/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -34,9 +36,13 @@ function App() {
             </Route>
             <Route path='/dashboard'>
               <DashBoard></DashBoard>
+              <Footer></Footer>
             </Route>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>

@@ -6,9 +6,7 @@ import useAuth from '../../../Contexts/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user, isLoading, admin } = useAuth()
-    if (isLoading) {
-        return <Spinner animation="border" variant="danger" />
-    }
+    if (isLoading) { return <Spinner animation="border" variant="danger" /> }
 
     return (
         <Route

@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import useAuth from '../../../Contexts/useAuth';
+import MyOrdersCart from './MyOrdersCart';
 
 const MyOrders = () => {
+    const [orders, setOrders] = useState([]);
+    const { user } = useAuth();
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setOrders(data));
+    }, [user.email])
+
+    const handleDelete = id => {
+        const proced = window.confirm('You want to Cancel your Order')
+        if (proced) {
+            const url = `http://localhost:5000/orders/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert('Cancel Successfully')
+                    if (data.deletedCount > 0) {
+                        const remaining = orders.filter(order => order._id !== id)
+                        setOrders(remaining);
+
+                    }
+                })
+        }
+    }
+
     return (
         <div>
-            <h2>My orders</h2>
+            {orders.length === 0 && <h2>You dont have Orders!</h2>}
+            <Row xs={1} md={3} className="g-4">
+                {
+                    orders.map(order => <MyOrdersCart
+                        key={order._id}
+                        orders={order}
+                        handleDelete={handleDelete}
+                    ></MyOrdersCart>)
+                }
+            </Row>
         </div>
     );
 };

@@ -31,7 +31,7 @@ const Header = () => {
                             </Nav>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            {user?.email && <Nav.Link href="#deets">{user.displayName}</Nav.Link>}
 
                         </Nav>
                     </Navbar.Collapse>
