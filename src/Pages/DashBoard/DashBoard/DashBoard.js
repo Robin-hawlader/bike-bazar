@@ -5,12 +5,10 @@ import {
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Contexts/useAuth';
 import AdminRoute from '../../PrivateRoute/AdminRoute/AdminRoute';
-import Footer from '../../Shared/Footer/Footer';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllorders from '../ManageAllOrders/ManageAllorders';
