@@ -8,7 +8,7 @@ This project was make React app with [Live Link:  https://modern-bike-ebce6.web.
 
 ## Why it  made
 
-From here you can buy latest bike in our oranization.
+From here you can buy latest bike in our organization.
 ## Our organization objective:
 
 Our purpose is to assist your favorate bike collected and sale; 
