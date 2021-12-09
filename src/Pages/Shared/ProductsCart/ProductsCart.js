@@ -6,7 +6,6 @@ const ProductsCart = (props) => {
     const { image, name, description, _id, price } = props.product;
     const history = useHistory();
     const handleDetails = (id, product) => {
-        console.log(product)
         history.push(id)
     }
 
